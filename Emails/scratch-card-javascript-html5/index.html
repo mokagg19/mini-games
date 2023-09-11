@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript scratch card Example</title>
+
+
+
+    <style>
+        .card{
+         width: 300px;
+         height: 380px;
+         position: relative;
+         box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
+        margin: 10px auto;
+        }    
+        
+      .base, #scratch {
+        cursor: default;
+        height: 80px;
+        width: 300px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          cursor: grabbing;
+      }
+      .base {
+        line-height: .9em;
+        text-align: center;
+        font-size: .8em;
+      }
+      #scratch {
+        top: 300px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+      }
+    </style>
+    
+</head>
+
+
+ <body>
+	
+<main>
+ <article>
+	<p>¿Te portaste bien este año?<br>Rasca y ve si Santa te trajo regalo.</p>
+    <div class="card">
+    <div class="base">
+      <img src="https://s3.amazonaws.com/juegos.aprendecontabella.com/Emails/scratch-card-javascript-html5/santa.png">
+      <br><br><b>¡Felicidades!</b> Ganaste un 15% de descuento<br>en la compra de tu siguiente curso.<br><br>Utiliza el código CODE en el checkout<br><span style="font-size:.7em;"><br>Válido hasta el 7 de enero</span></div>
+    <canvas id="scratch" width="300" height="60"></canvas>
+    </div>
+        
+    </article>
+</main>
+
+
+
+<!-- scratch-card-with-canvas JS -->
+<script src="https://s3.amazonaws.com/juegos.aprendecontabella.com/Emails/scratch-card-javascript-html5/js/scratch-card.js"></script>
+     
+ </body>
+</html>

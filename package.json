@@ -1,0 +1,14 @@
+{
+  "name": "tabella-juegos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sumayrestamoniomioden2.js",
+  "scripts": {
+    "format": "prettier --write"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "2.5.1"
+  }
+}

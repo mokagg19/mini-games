@@ -1,0 +1,79 @@
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.0.2/bootstrap-hover-dropdown.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/juegos.aprendecontabella.com/wordsearch/wordsearch.css">
+
+
+<div ng-app="wordsearchApp" ng-controller="WordsearchCtrl">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title">Como jugar</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Encuentra las palabras escondidas en la sopa de letras. Para seleccionar una palabra, haz click sobre la primera letra de la palabra y luego sobre la &uacute;ltima letra de la palabra.</p>
+          <p>Cada nivel es m&aacute;s dif&iacute;cil que el anterior.</p>
+        </div>
+        <div class="col-sm-6">
+          <p><span class="badge">Pista</span>
+            Las palabras pueden estar escritas en cualquier direcci&oacute;n incluyendo al rev&eacute;s y diagonales.</p>
+
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="levelSelect" data-toggle="dropdown">
+              Selecciona el nivel ({{ currentLevel.width }}x{{ currentLevel.height }})
+              <span class="caret"></span>
+            </button>
+            <ul id="level-select-dropdown" class="dropdown-menu">
+              <li ng-repeat="level in levels">
+                <a href="javascript:void(0)" ng-click="loadLevel(level)">
+                  {{ level.width }}x{{ level.height }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 text-center">
+      <div class="ws-grid" ng-class='colorClass'>
+        <div ng-repeat="row in grid.cells">
+          <div class="ws-cell" ng-repeat="cell in row" ng-click="cellClicked(cell)" ng-mouseenter="updatePath(cell)"
+            ng-mouseleave="selectedCell && clearPath()"
+            ng-class="{selected: cell.isSelected, path: cell.onPath, 'correct-path': cell.onCorrectPath}">
+            <div class="solved" ng-class="colorClass" ng-repeat="colorClass in cell.solvedColorClasses track by $index">
+            </div>
+            {{cell.letter}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 text-center">
+      <button type="button" class="btn btn-lg btn-default word" ng-repeat="word in words">{{word}}</button>
+      <button class="btn btn-lg btn-default word solved" ng-class="word.colorClass"
+        ng-repeat="word in foundWords">{{word.word}}</button>
+    </div>
+  </div>
+</div>
+
+<script defer src="https://s3.amazonaws.com/juegos.aprendecontabella.com/wordsearch/wordsearchbio1.js"></script>

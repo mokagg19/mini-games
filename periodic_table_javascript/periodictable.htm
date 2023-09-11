@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title>Tabla Periódica</title>
+    <meta charset="utf-8" />
+    <link href="projects.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="maindiv">
+
+		<div class="banner"></div>
+
+		
+    	<div class="roundcorners leftdiv">
+
+			<table style="width:100%;">
+
+            	<tr><td><div class="label">Nombre</div></td></tr>
+            	<tr><td><input type="text" id="namefilter" style="width:124px" /></td></tr>
+
+            	<tr><td><div class="label">Númbero atómico</div></td></tr>
+            	<tr><td><input type="number" id="atomicnumberfilter" style="width:124px" min=1 max=118 /></td></tr>
+
+            	<tr><td><div class="label">Símbolo</div></td></tr>
+            	<tr><td><input type="text" id="symbolfilter" style="width:124px" /></td></tr>
+
+				<tr><td><div class="label">Categoria</div></td></tr>
+				<tr><td>
+					<select id="categoryfilter">
+						<option value=""></option>
+						<option value="Alkali metal">Metal Alcalino</option>
+						<option value="Alkaline earth metal">Alcalinotérreo</option>
+						<option value="Lanthanide">Lantánido</option>
+						<option value="Actinide">Actínido</option>
+						<option value="Transition metal">Metal de transición</option>
+						<option value="Post-transition metal">Metal bloque p</option>
+						<option value="Metalloid">Metaloide</option>
+						<option value="Reactive nonmetal">Reactivo no metal</option>
+						<option value="Noble gas">Gas nombre</option>
+						<option value="Unknown">Desconocido</option>
+					</select>
+				</td></tr>
+
+
+            	<tr><td><div class="label">Grupo</div></td></tr>
+            	<tr><td>
+					<select id="groupfilter">
+  						<option value=""></option>
+  						<option value="0">ninguno</option>
+  						<option value="1">1</option>
+  						<option value="2">2</option>
+  						<option value="3">3</option>
+  						<option value="4">4</option>
+  						<option value="5">5</option>
+  						<option value="6">6</option>
+  						<option value="7">7</option>
+  						<option value="8">8</option>
+  						<option value="9">9</option>
+  						<option value="10">10</option>
+  						<option value="11">11</option>
+  						<option value="12">12</option>
+  						<option value="13">13</option>
+  						<option value="14">14</option>
+  						<option value="15">15</option>
+  						<option value="16">16</option>
+  						<option value="17">17</option>
+  						<option value="18">18</option>
+					</select>
+				</td></tr>
+
+            	<tr><td><div class="label">Periodo</div></td></tr>
+            	<tr><td>
+					<select id="periodfilter">
+  						<option value=""></option>
+  						<option value="1">1</option>
+  						<option value="2">2</option>
+  						<option value="3">3</option>
+  						<option value="4">4</option>
+  						<option value="5">5</option>
+  						<option value="6">6</option>
+  						<option value="7">7</option>
+					</select>
+				</td></tr>
+
+            	<tr><td><div class="label">Bloque</div></td></tr>
+            	<tr><td>
+					<select id="blockfilter">
+  						<option value=""></option>
+  						<option value="d">d</option>
+  						<option value="f">f</option>
+  						<option value="p">p</option>
+  						<option value="s">s</option>
+					</select>
+				</td></tr>
+
+                <tr>
+                    <td colspan="2"><div id="btnApplyFilter" class="button">Aplicar filtro</div></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><div id="btnClearFilter" class="button">Borrar filtro</div></td>
+                </tr>
+
+            </table>
+
+    	</div>
+
+    	<div id="periodictablediv" class="roundcorners tablediv">
+			<table id="periodictable" style="width: 100%; height: 100%;"></table>
+		</div>
+
+    	<div class="roundcorners rightdiv">
+
+			<table style="width:100%;">
+
+            	<tr>
+					<td><div class="label">Color por categoría</div></td>
+				</tr>
+            	<tr>
+					<td class="radiobutton"><div class="radiobutton"><input type="radio" name="colorby" value="colorbycategory" id="colorcategory" checked /></div></td>
+				</tr>
+
+            	<tr>
+					<td><div class="label">Color por bloque</div></td>
+				</tr>
+            	<tr>
+					<td class="radiobutton"><div class="radiobutton"><input type="radio" name="colorby" value="colorbyblock" id="colorblock" /></div></td>
+				</tr>
+
+            </table>
+
+			<table id="categorykey" style="width:100%; display: inline;">
+            	<tr><td><div class="alkalimetal colorkey roundcorners">Metal Alcalino</div></td></tr>
+            	<tr><td><div class="alkalineearthmetal colorkey roundcorners">Alcalinotérreo</div></td></tr>
+            	<tr><td><div class="lanthanide colorkey roundcorners">Lantánido</div></td></tr>
+            	<tr><td><div class="actinide colorkey roundcorners">Actínido</div></td></tr>
+            	<tr><td><div class="transitionmetal colorkey roundcorners">Metal en transición</div></td></tr>
+            	<tr><td><div class="posttransitionmetal colorkey roundcorners">Metal bloque p</div></td></tr>
+            	<tr><td><div class="metalloid colorkey roundcorners">Metaloide</div></td></tr>
+            	<tr><td><div class="reactivenonmetal colorkey roundcorners">Reactivo no metal</div></td></tr>
+            	<tr><td><div class="noblegas colorkey roundcorners">Gas Noble</div></td></tr>
+            	<tr><td><div class="unknown colorkey roundcorners">Desconocido</div></td></tr>
+            </table>
+
+			<table id="blockkey" style="width:100%; display: none;">
+            	<tr><td><div class="sblock colorkey roundcorners">s</div></td></tr>
+            	<tr><td><div class="dblock colorkey roundcorners">d</div></td></tr>
+            	<tr><td><div class="fblock colorkey roundcorners">f</div></td></tr>
+            	<tr><td><div class="pblock colorkey roundcorners">p</div></td></tr>
+            </table>
+
+		</div>
+
+	</div>
+
+
+	<div id="infoboxbackground"
+	style="background-color: #000000; position: absolute;
+	left: 0px; right: 0px; top: 0px; bottom: 0px;
+    opacity: 0.9; visibility: hidden;"></div>
+
+	<div id="infobox"
+	 class="border roundcorners"
+	style="position:absolute;  width: 500px; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #FFFFFF; visibility: hidden;">
+
+		<table style="width:100%;">
+    		<tr><th colspan="2" id="infoName" class="thelementname"></th></tr>
+    		<tr><th>Número atómico</th><td id="infoAtomicNumber"></th></tr>
+        	<tr><th>Símbolo</th><td id="infoChemicalSymbol"></td></tr>
+        	<tr><th>Categoria</th><td id="infoCategory"></td></tr>
+        	<tr><th>Peso atómico - convencional</th><td id="infoAtomicWeightConventional"></td></tr>
+        	<tr><th>Peso atómico - estándar</th><td id="infoAtomicWeightStandard"></td></tr>
+        	<tr><th>Occurrencia</th><td id="infoOccurrence"></td></tr>
+        	<tr><th>Estado de la materia</th><td id="infoStateOfMatter"></td></tr>
+        	<tr><th>Grupo</th><td id="infoGroup"></td></tr>
+        	<tr><th>Periodo</th><td id="infoPeriod"></td></tr>
+        	<tr><th>Bloque</th><td id="infoBlock"></td></tr>
+        	<tr><td colspan="2"><div id="btnCloseInfoBox" class="button">Cerrar</div></td></tr>
+		</table>
+
+	</div>
+
+    <script src="data.js"></script>
+    <script src="periodictable.js"></script>
+    <script src="periodictableinfobox.js"></script>
+    <script src="periodictabledisplay.js"></script>
+    <script src="periodictablepage.js"></script>
+
+</body>
+
+</html>

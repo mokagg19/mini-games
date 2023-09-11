@@ -1,0 +1,173 @@
+.ws-grid {
+  display: inline-block;
+  line-height: normal;
+}
+
+.word {
+  margin: 5px;
+}
+
+.ws-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  position: relative;
+  transition: background 0.9s;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.ws-cell div {
+  position: absolute;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+.ws-grid.color1 .ws-cell:hover {
+  transition: background 0.2s;
+  background: rgba(255, 69, 0, 0.2);
+}
+.ws-grid.color1 .ws-cell.selected {
+  transition: background 0.2s;
+  background: rgba(255, 69, 0, 0.3);
+}
+.ws-grid.color1 .ws-cell.path {
+  transition: background 0.2s;
+  background: rgba(255, 69, 0, 0.3);
+}
+.ws-grid.color1 .ws-cell.correct-path {
+  transition: background 0.2s;
+  background: rgba(255, 69, 0, 0.5);
+}
+
+.ws-cell div.solved.color1 {
+  transition: background 0.2s;
+  background: rgba(255, 69, 0, 0.6);
+}
+
+.word.solved.color1 {
+  color: #D86F6A;
+  text-decoration: line-through;
+}
+
+.ws-grid.color2 .ws-cell:hover {
+  transition: background 0.2s;
+  background: rgba(50, 205, 50, 0.2);
+}
+.ws-grid.color2 .ws-cell.selected {
+  transition: background 0.2s;
+  background: rgba(50, 205, 50, 0.3);
+}
+.ws-grid.color2 .ws-cell.path {
+  transition: background 0.2s;
+  background: rgba(50, 205, 50, 0.3);
+}
+.ws-grid.color2 .ws-cell.correct-path {
+  transition: background 0.2s;
+  background: rgba(50, 205, 50, 0.5);
+}
+
+.ws-cell div.solved.color2 {
+  transition: background 0.2s;
+  background: rgba(50, 205, 50, 0.6);
+}
+
+.word.solved.color2 {
+  color:#88B756;
+  text-decoration: line-through;
+}
+
+.ws-grid.color3 .ws-cell:hover {
+  transition: background 0.2s;
+  background: rgba(0, 255, 255, 0.2);
+}
+.ws-grid.color3 .ws-cell.selected {
+  transition: background 0.2s;
+  background: rgba(0, 255, 255, 0.3);
+}
+.ws-grid.color3 .ws-cell.path {
+  transition: background 0.2s;
+  background: rgba(0, 255, 255, 0.3);
+}
+.ws-grid.color3 .ws-cell.correct-path {
+  transition: background 0.2s;
+  background: rgba(0, 255, 255, 0.5);
+}
+
+.ws-cell div.solved.color3 {
+  transition: background 0.2s;
+  background: rgba(0, 255, 255, 0.6);
+}
+
+.word.solved.color3 {
+  color: #60B4DA;
+  text-decoration: line-through;
+}
+
+.ws-grid.color4 .ws-cell:hover {
+  transition: background 0.2s;
+  background: rgba(255, 215, 0, 0.2);
+}
+.ws-grid.color4 .ws-cell.selected {
+  transition: background 0.2s;
+  background: rgba(255, 215, 0, 0.3);
+}
+.ws-grid.color4 .ws-cell.path {
+  transition: background 0.2s;
+  background: rgba(255, 215, 0, 0.3);
+}
+.ws-grid.color4 .ws-cell.correct-path {
+  transition: background 0.2s;
+  background: rgba(255, 215, 0, 0.5);
+}
+
+.ws-cell div.solved.color4 {
+  transition: background 0.2s;
+  background: rgba(255, 215, 0, 0.6);
+}
+
+.word.solved.color4 {
+  color: #EABC43;
+  text-decoration: line-through;
+}
+
+.ws-grid.color5 .ws-cell:hover {
+  transition: background 0.2s;
+  background: rgba(199, 21, 133, 0.2);
+}
+.ws-grid.color5 .ws-cell.selected {
+  transition: background 0.2s;
+  background: rgba(199, 21, 133, 0.3);
+}
+.ws-grid.color5 .ws-cell.path {
+  transition: background 0.2s;
+  background: rgba(199, 21, 133, 0.3);
+}
+.ws-grid.color5 .ws-cell.correct-path {
+  transition: background 0.2s;
+  background: rgba(199, 21, 133, 0.5);
+}
+
+.ws-cell div.solved.color5 {
+  transition: background 0.2s;
+  background: rgba(199, 21, 133, 0.6);
+}
+
+.word.solved.color5 {
+  color: #A46398;
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=wordsearch.css.map */

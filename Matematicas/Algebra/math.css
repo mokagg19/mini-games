@@ -1,0 +1,104 @@
+#answerButton {
+    display: block;
+}
+
+.buttons {
+    background-color: #1a887f;
+    border-radius: 28px;
+    border: 1px solid #167067;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+    position: relative;
+    margin: 0 auto;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.textgame {
+    text-align: justify;
+    font-size: x-large;
+}
+
+#solucion {
+    text-align: center;
+}
+
+.number {
+    width: 4ch;
+    font-size: large;
+}
+
+.numbers {
+    font-size: 1.2em;
+    font-weight: bold;
+    color:  #1a887f;
+}
+
+.exponent {
+    width: 2ch;
+    font-size: small;
+    
+}
+
+.explicacion {
+    font-size: large;
+}
+
+.raiz-linea {
+    text-decoration: overline;
+}
+
+.raiz-simbolo {
+    font-size: .9em;
+}
+
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    letter-spacing: 0.001em;
+    text-align: center;
+}
+
+.frac>span {
+    display: block;
+    padding: 0.1em;
+}
+
+.frac span.bottom {
+    border-top: thin solid black;
+}
+
+.frac span.symbol {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .number {
+        width: 2ch;
+        font-size: small;
+    }
+    .exponent {
+        width: 2ch;
+        font-size: small;
+        
+    }
+}
